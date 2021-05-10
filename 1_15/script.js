@@ -55,13 +55,29 @@ window.addEventListener("mousemove", mousePosition, false);
 const toggleButton = document.querySelector(".btn-toggle");
 const statusText = document.querySelector(".toggle-status span");
 
-toggleButton.addEventListener("click", function (event) {
-	console.log(event);
-	this.innerText === "Open" && statusText.innerText == "Closed"
-		? (this.innerText = "Close")
-		: (this.innerText = "Open");
+toggleButton.addEventListener("click", () => {
+	toggleButton.innerText === "Open" && statusText.innerText == "Closed"
+		? (toggleButton.innerText = "Close")
+		: (toggleButton.innerText = "Open");
 
 	statusText.innerText === "Opened"
 		? (statusText.innerText = "Closed")
 		: (statusText.innerText = "Opened");
 });
+
+const showText = document.querySelector(".show-text-btn");
+const textStatus = document.querySelector(".text-status span");
+
+showText.addEventListener(
+	"click",
+	() => {
+		showText.innerHTML === "Show" && textStatus.innerText === ""
+			? (showText.innerHTML = "Hide")
+			: (showText.innerHTML = "Show");
+
+		textStatus.innerText === "Visible"
+			? (textStatus.innerText = "")
+			: (textStatus.innerText = "Visible");
+	},
+	false
+);

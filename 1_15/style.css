@@ -25,11 +25,12 @@ body {
 
 .btn-increase,
 .btn-decrease,
-.btn-toggle {
+.btn-toggle,
+.show-text-btn {
 	padding: 1rem 2rem;
 	border: 3px solid black;
 	border-radius: 0.5rem;
-	font-size: 2rem;
+	font-size: 1.4rem;
 	flex: 0 1 auto;
 	background-color: white;
 	cursor: pointer;
@@ -37,5 +38,5 @@ body {
 
 h1,
 span {
-	font-size: 2rem;
+	font-size: 1.4rem;
 }
