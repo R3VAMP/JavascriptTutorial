@@ -2,12 +2,17 @@
 
 const buttonIncrease = document.querySelector(".btn-increase");
 const buttonDecrease = document.querySelector(".btn-decrease");
+const buttonReset = document.querySelector(".btn-reset");
+const counterText = document.querySelector(".counter-text span");
+const heading = document.querySelector(".counter span");
+
 var counter = 0;
 
 buttonIncrease.addEventListener(
 	"click",
 	() => {
 		heading.innerText = ++counter;
+		counterText.style.display = `none`;
 	},
 	false
 );
@@ -15,13 +20,23 @@ buttonDecrease.addEventListener(
 	"click",
 	() => {
 		heading.innerText = --counter;
+		counterText.style.display = `none`;
+	},
+	false
+);
+buttonReset.addEventListener(
+	"click",
+	() => {
+		counter = 0;
+		heading.innerText = counter;
+		counterText.style.display = `inline`;
+		counterText.innerText = "Counter is Reset";
 	},
 	false
 );
 
 // Mouse Pointer entering main container
 
-const heading = document.querySelector(".counter span");
 const container = document.querySelector(".main-container");
 
 container.addEventListener(
@@ -64,20 +79,3 @@ toggleButton.addEventListener("click", () => {
 		? (statusText.innerText = "Closed")
 		: (statusText.innerText = "Opened");
 });
-
-const showText = document.querySelector(".show-text-btn");
-const textStatus = document.querySelector(".text-status span");
-
-showText.addEventListener(
-	"click",
-	() => {
-		showText.innerHTML === "Show" && textStatus.innerText === ""
-			? (showText.innerHTML = "Hide")
-			: (showText.innerHTML = "Show");
-
-		textStatus.innerText === "Visible"
-			? (textStatus.innerText = "")
-			: (textStatus.innerText = "Visible");
-	},
-	false
-);
