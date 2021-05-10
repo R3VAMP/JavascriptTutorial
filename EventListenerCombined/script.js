@@ -1,39 +1,30 @@
 // Buttons to increase and decrease Counter
 
-const buttonIncrease = document.querySelector(".btn-increase");
-const buttonDecrease = document.querySelector(".btn-decrease");
-const buttonReset = document.querySelector(".btn-reset");
-const counterText = document.querySelector(".counter-text span");
-const heading = document.querySelector(".counter span");
+const counterText = document.querySelector(".counter-text");
+const heading = document.querySelector(".counter");
+const buttons = document.querySelectorAll(".btn");
 
 var counter = 0;
 
-buttonIncrease.addEventListener(
-	"click",
-	() => {
-		heading.innerText = ++counter;
-		counterText.style.display = `none`;
-	},
-	false
-);
-buttonDecrease.addEventListener(
-	"click",
-	() => {
-		heading.innerText = --counter;
-		counterText.style.display = `none`;
-	},
-	false
-);
-buttonReset.addEventListener(
-	"click",
-	() => {
-		counter = 0;
-		heading.innerText = counter;
-		counterText.style.display = `inline`;
-		counterText.innerText = "Counter is Reset";
-	},
-	false
-);
+buttons.forEach((btn) => {
+	// console.log(btn);
+	btn.addEventListener("click", (event) => {
+		checkStyle = event.currentTarget.classList;
+		// console.log(checkStyle);
+		if (checkStyle.contains("decrease")) {
+			counter--;
+			counterText.style.display = `none`;
+		} else if (checkStyle.contains("increase")) {
+			counter++;
+			counterText.style.display = `none`;
+		} else {
+			counterText.style.display = `inline`;
+			counterText.textContent = "Counter is Reset";
+			counter = 0;
+		}
+		heading.textContent = counter;
+	});
+});
 
 // Mouse Pointer entering main container
 
@@ -67,7 +58,7 @@ window.addEventListener("mousemove", mousePosition, false);
 
 // Button to Toggle Text inside a heading
 
-const toggleButton = document.querySelector(".btn-toggle");
+const toggleButton = document.querySelector(".btn.toggle");
 const statusText = document.querySelector(".toggle-status span");
 
 toggleButton.addEventListener("click", () => {
