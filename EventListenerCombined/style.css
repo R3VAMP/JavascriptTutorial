@@ -1,44 +1,44 @@
 body {
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .main-container {
-	width: 40rem;
-	font-size: 1.4rem;
-	padding: 2rem 2rem 4rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	border-radius: 2rem;
-	background-color: hsl(0, 0%, 85%);
-	position: absolute;
+  width: 40rem;
+  font-size: 1.4rem;
+  padding: 2rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 2rem;
+  background-color: hsl(0, 0%, 85%);
+  position: absolute;
 }
 .blue {
-	background-color: rgb(124, 250, 197);
+  background-color: rgb(124, 250, 197);
 }
 
 .btn.increase,
 .btn.decrease,
 .btn.toggle,
 .btn.reset {
-	padding: 1rem 2rem;
-	border: 3px solid black;
-	border-radius: 0.5rem;
-	font-size: 1.5rem;
-	flex: 0 1 auto;
-	background-color: white;
-	cursor: pointer;
+  padding: 1rem 2rem;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  flex: 0 1 auto;
+  background-color: white;
+  cursor: pointer;
 }
 
 h1,
 h2,
 span {
-	font-size: 1.7rem;
+  font-size: 1.7rem;
 }
